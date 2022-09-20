@@ -1,0 +1,2 @@
+ninja: Entering directory `D:\AndroidStudioProjects\myYoloV5_hard\app\.cxx\Debug\4b2w5a13\arm64-v8a'
+ninja: no work to do.

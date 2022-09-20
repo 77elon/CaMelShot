@@ -19,6 +19,9 @@ import android.graphics.Bitmap;
 
 public class YoloV5Ncnn
 {
+    public native boolean Init(AssetManager mgr);
+
+
     public class Obj
     {
         public float x;
@@ -30,6 +33,6 @@ public class YoloV5Ncnn
     }
 
     public static native Obj[] Detect(Bitmap bitmap, boolean use_gpu);
-    public native boolean Init(AssetManager mgr);
+
 
 }

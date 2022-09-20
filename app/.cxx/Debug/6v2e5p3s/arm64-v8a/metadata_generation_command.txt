@@ -1,0 +1,26 @@
+                    Executable : C:\Users\daeha\AppData\Local\Android\Sdk\cmake\3.18.1\bin\cmake.exe
+arguments : 
+-HD:\AndroidStudioProjects\myYoloV5_SUPERhard\myYoloV5_hard\app\src\main\jni
+-DCMAKE_SYSTEM_NAME=Android
+-DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+-DCMAKE_SYSTEM_VERSION=30
+-DANDROID_PLATFORM=android-30
+-DANDROID_ABI=arm64-v8a
+-DCMAKE_ANDROID_ARCH_ABI=arm64-v8a
+-DANDROID_NDK=C:\Users\daeha\AppData\Local\Android\Sdk\ndk\21.4.7075529
+-DCMAKE_ANDROID_NDK=C:\Users\daeha\AppData\Local\Android\Sdk\ndk\21.4.7075529
+-DCMAKE_TOOLCHAIN_FILE=C:\Users\daeha\AppData\Local\Android\Sdk\ndk\21.4.7075529\build\cmake\android.toolchain.cmake
+-DCMAKE_MAKE_PROGRAM=C:\Users\daeha\AppData\Local\Android\Sdk\cmake\3.18.1\bin\ninja.exe
+-DCMAKE_CXX_FLAGS=-std=gnu++2a -frtti
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=D:\AndroidStudioProjects\myYoloV5_SUPERhard\myYoloV5_hard\app\build\intermediates\cxx\Debug\6v2e5p3s\obj\arm64-v8a
+-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=D:\AndroidStudioProjects\myYoloV5_SUPERhard\myYoloV5_hard\app\build\intermediates\cxx\Debug\6v2e5p3s\obj\arm64-v8a
+-DCMAKE_BUILD_TYPE=Debug
+-BD:\AndroidStudioProjects\myYoloV5_SUPERhard\myYoloV5_hard\app\.cxx\Debug\6v2e5p3s\arm64-v8a
+-GNinja
+-DANDROID_STL=c++_static
+-DANDROID_TOOLCHAIN=clang
+jvmArgs : 
+
+
+                    Build command args: []
+                    Version: 2

@@ -1,0 +1,31 @@
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: D:/AndroidStudioProjects/myYoloV5_SUPERhard/myYoloV5_hard/sdk/.cxx/Debug/4773t6u3/arm64-v8a/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\daeha\AppData\Local\Android\Sdk\cmake\3.18.1\bin\ninja.exe cmTC_f1d72 && [1/2] Building CXX object CMakeFiles/cmTC_f1d72.dir/CMakeCXXCompilerABI.cpp.o
+FAILED: CMakeFiles/cmTC_f1d72.dir/CMakeCXXCompilerABI.cpp.o 
+C:\Users\daeha\AppData\Local\Android\Sdk\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=aarch64-none-linux-android21 --gcc-toolchain=C:/Users/daeha/AppData/Local/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/daeha/AppData/Local/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat  -fno-rttii -frtti -fexceptions -fsigned-char  -fPIE   -v -MD -MT CMakeFiles/cmTC_f1d72.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles\cmTC_f1d72.dir\CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_f1d72.dir/CMakeCXXCompilerABI.cpp.o -c C:/Users/daeha/AppData/Local/Android/Sdk/cmake/3.18.1/share/cmake-3.18/Modules/CMakeCXXCompilerABI.cpp
+clang++: error: unknown argument '-fno-rttii'; did you mean '-fno-rtti'?
+Android (7019983 based on r365631c3) clang version 9.0.9 (https://android.googlesource.com/toolchain/llvm-project a2a1e703c0edb03ba29944e529ccbf457742737b) (based on LLVM 9.0.9svn)
+Target: aarch64-none-linux-android21
+Thread model: posix
+InstalledDir: C:\Users\daeha\AppData\Local\Android\Sdk\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\bin
+Found candidate GCC installation: C:/Users/daeha/AppData/Local/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/aarch64-linux-android\4.9.x
+Selected GCC installation: C:/Users/daeha/AppData/Local/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/aarch64-linux-android/4.9.x
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ninja: build stopped: subcommand failed.
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: D:/AndroidStudioProjects/myYoloV5_SUPERhard/myYoloV5_hard/sdk/.cxx/Debug/4773t6u3/arm64-v8a/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\daeha\AppData\Local\Android\Sdk\cmake\3.18.1\bin\ninja.exe cmTC_f9b72 && [1/2] Building CXX object CMakeFiles/cmTC_f9b72.dir/testCXXCompiler.cxx.o
+FAILED: CMakeFiles/cmTC_f9b72.dir/testCXXCompiler.cxx.o 
+C:\Users\daeha\AppData\Local\Android\Sdk\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=aarch64-none-linux-android21 --gcc-toolchain=C:/Users/daeha/AppData/Local/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/daeha/AppData/Local/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-rttii -frtti -fexceptions -fsigned-char  -fPIE -MD -MT CMakeFiles/cmTC_f9b72.dir/testCXXCompiler.cxx.o -MF CMakeFiles\cmTC_f9b72.dir\testCXXCompiler.cxx.o.d -o CMakeFiles/cmTC_f9b72.dir/testCXXCompiler.cxx.o -c testCXXCompiler.cxx
+clang++: error: unknown argument '-fno-rttii'; did you mean '-fno-rtti'?
+ninja: build stopped: subcommand failed.
+
+
+

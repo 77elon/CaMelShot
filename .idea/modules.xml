@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/myYoloV5_hard.iml" filepath="$PROJECT_DIR$/.idea/modules/myYoloV5_hard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/myYoloV5_hard.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/myYoloV5_hard.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/OpenCV/myYoloV5_hard.sdk.iml" filepath="$PROJECT_DIR$/.idea/modules/OpenCV/myYoloV5_hard.sdk.iml" />
+    </modules>
+  </component>
+</project>

@@ -228,6 +228,7 @@ static void generate_proposals(const ncnn::Mat& anchors, int stride, const ncnn:
     }
 }
 
+
 extern "C" {
 
 // FIXME DeleteGlobalRef is missing for objCls
@@ -298,7 +299,7 @@ JNIEXPORT jboolean JNICALL Java_com_tencent_yolov5ncnn_YoloV5Ncnn_Init(JNIEnv* e
     jclass localObjCls = env->FindClass("com/tencent/yolov5ncnn/YoloV5Ncnn$Obj");
     objCls = reinterpret_cast<jclass>(env->NewGlobalRef(localObjCls));
 
-    constructortorId = env->GetMethodID(objCls, "<init>", "(Lcom/tencent/yolov5ncnn/YoloV5Ncnn;)V");
+    constructortorId = env->GetMethodID(objCls, "<init>", "()V");
 
     xId = env->GetFieldID(objCls, "x", "F");
     yId = env->GetFieldID(objCls, "y", "F");
@@ -320,6 +321,7 @@ JNIEXPORT jobjectArray JNICALL Java_com_tencent_yolov5ncnn_YoloV5Ncnn_Detect(JNI
     }
 
     double start_time = ncnn::get_current_time();
+
 
     AndroidBitmapInfo info;
     AndroidBitmap_getInfo(env, bitmap, &info);
@@ -472,7 +474,7 @@ JNIEXPORT jobjectArray JNICALL Java_com_tencent_yolov5ncnn_YoloV5Ncnn_Detect(JNI
     };
 
     jobjectArray jObjArray = env->NewObjectArray(objects.size(), objCls, NULL);
-    __android_log_print(ANDROID_LOG_DEBUG, "YoloV5Ncnn", "%d objs detected", objects.size());
+    //__android_log_print(ANDROID_LOG_DEBUG, "YoloV5Ncnn", "%u objs detected", objects.size());
 
     for (size_t i=0; i<objects.size(); i++)
     {
@@ -495,185 +497,6 @@ JNIEXPORT jobjectArray JNICALL Java_com_tencent_yolov5ncnn_YoloV5Ncnn_Detect(JNI
 
     return jObjArray;
 }
-//MYJOB - detect with matrix
-//JNIEXPORT jobjectArray JNICALL Java_com_tencent_yolov5ncnn_YoloV5Ncnn_DetectMat(JNIEnv* env, jobject thiz, jobject mat, jboolean use_gpu)
-//{
-//    if (use_gpu == JNI_TRUE && ncnn::get_gpu_count() == 0)
-//    {
-//        return NULL;
-//        //return env->NewStringUTF("no vulkan capable gpu");
-//    }
-//    ncnn::Mat& in = *(ncnn::Mat*)mat;
-//
-//    double start_time = ncnn::get_current_time();
-//
-//    const int width = in.w;
-//    const int height = in.h;
-//
-//    // ncnn from bitmap
-//    const int target_size = 640;
-//
-//    // letterbox pad to multiple of 32
-//
-//    int w = width;
-//    int h = height;
-//    float scale = 1.f;
-//    if (w > h)
-//    {
-//        scale = (float)target_size / w;
-//        w = target_size;
-//        h = h * scale;
-//    }
-//    else
-//    {
-//        scale = (float)target_size / h;
-//        h = target_size;
-//        w = w * scale;
-//    }
-//
-//    // pad to target_size rectangle
-//    // yolov5/utils/datasets.py letterbox
-//    int wpad = (w + 31) / 32 * 32 - w;
-//    int hpad = (h + 31) / 32 * 32 - h;
-//    ncnn::Mat in_pad;
-//    ncnn::copy_make_border(in, in_pad, hpad / 2, hpad - hpad / 2, wpad / 2, wpad - wpad / 2, ncnn::BORDER_CONSTANT, 114.f);
-//
-//    // yolov5
-//    std::vector<Object> objects;
-//    {
-//        const float prob_threshold = 0.25f;
-//        const float nms_threshold = 0.45f;
-//
-//        const float norm_vals[3] = {1 / 255.f, 1 / 255.f, 1 / 255.f};
-//        in_pad.substract_mean_normalize(0, norm_vals);
-//
-//        ncnn::Extractor ex = yolov5.create_extractor();
-//
-//        ex.set_vulkan_compute(use_gpu);
-//
-//        ex.input("in0", in_pad);
-//
-//        std::vector<Object> proposals;
-//
-//        // anchor setting from yolov5/models/yolov5s.yaml
-//
-//        // stride 8
-//        {
-//            ncnn::Mat out;
-//            ex.extract("out0", out);
-//
-//            ncnn::Mat anchors(6);
-//            anchors[0] = 10.f;
-//            anchors[1] = 13.f;
-//            anchors[2] = 16.f;
-//            anchors[3] = 30.f;
-//            anchors[4] = 33.f;
-//            anchors[5] = 23.f;
-//
-//            std::vector<Object> objects8;
-//            generate_proposals(anchors, 8, in_pad, out, prob_threshold, objects8);
-//
-//            proposals.insert(proposals.end(), objects8.begin(), objects8.end());
-//        }
-//
-//        // stride 16
-//        {
-//            ncnn::Mat out;
-//            ex.extract("out1", out);
-//
-//            ncnn::Mat anchors(6);
-//            anchors[0] = 30.f;
-//            anchors[1] = 61.f;
-//            anchors[2] = 62.f;
-//            anchors[3] = 45.f;
-//            anchors[4] = 59.f;
-//            anchors[5] = 119.f;
-//
-//            std::vector<Object> objects16;
-//            generate_proposals(anchors, 16, in_pad, out, prob_threshold, objects16);
-//
-//            proposals.insert(proposals.end(), objects16.begin(), objects16.end());
-//        }
-//
-//        // stride 32
-//        {
-//            ncnn::Mat out;
-//            ex.extract("out2", out);
-//
-//            ncnn::Mat anchors(6);
-//            anchors[0] = 116.f;
-//            anchors[1] = 90.f;
-//            anchors[2] = 156.f;
-//            anchors[3] = 198.f;
-//            anchors[4] = 373.f;
-//            anchors[5] = 326.f;
-//
-//            std::vector<Object> objects32;
-//            generate_proposals(anchors, 32, in_pad, out, prob_threshold, objects32);
-//
-//            proposals.insert(proposals.end(), objects32.begin(), objects32.end());
-//        }
-//
-//        // sort all proposals by score from highest to lowest
-//        qsort_descent_inplace(proposals);
-//
-//        // apply nms with nms_threshold
-//        std::vector<int> picked;
-//        nms_sorted_bboxes(proposals, picked, nms_threshold);
-//
-//        int count = picked.size();
-//
-//        objects.resize(count);
-//        for (int i = 0; i < count; i++)
-//        {
-//            objects[i] = proposals[picked[i]];
-//
-//            // adjust offset to original unpadded
-//            float x0 = (objects[i].x - (wpad / 2)) / scale;
-//            float y0 = (objects[i].y - (hpad / 2)) / scale;
-//            float x1 = (objects[i].x + objects[i].w - (wpad / 2)) / scale;
-//            float y1 = (objects[i].y + objects[i].h - (hpad / 2)) / scale;
-//
-//            // clip
-//            x0 = std::max(std::min(x0, (float)(width - 1)), 0.f);
-//            y0 = std::max(std::min(y0, (float)(height - 1)), 0.f);
-//            x1 = std::max(std::min(x1, (float)(width - 1)), 0.f);
-//            y1 = std::max(std::min(y1, (float)(height - 1)), 0.f);
-//
-//            objects[i].x = x0;
-//            objects[i].y = y0;
-//            objects[i].w = x1 - x0;
-//            objects[i].h = y1 - y0;
-//        }
-//    }
-//
-//    // objects to Obj[]
-//    static const char* class_names[] = {
-//            "building", "light house", "mailbox", "mountain", "sculpture", "street", "street_light", "telephone_box"
-//    };
-//
-//    jobjectArray jObjArray = env->NewObjectArray(objects.size(), objCls, NULL);
-//    __android_log_print(ANDROID_LOG_DEBUG, "YoloV5Ncnn", "%d objs detected", objects.size());
-//    for (size_t i=0; i<objects.size(); i++)
-//    {
-//        jobject jObj = env->NewObject(objCls, constructortorId, thiz);
-//
-//        env->SetFloatField(jObj, xId, objects[i].x);
-//        env->SetFloatField(jObj, yId, objects[i].y);
-//        env->SetFloatField(jObj, wId, objects[i].w);
-//        env->SetFloatField(jObj, hId, objects[i].h);
-//        env->SetObjectField(jObj, labelId, env->NewStringUTF(class_names[objects[i].label]));
-//        env->SetFloatField(jObj, probId, objects[i].prob);
-//        __android_log_print(ANDROID_LOG_DEBUG, "YoloV5Ncnn", "\nx: %.2f\ny: %.2f\nw: %.2f\nh: %.2f", objects[i].x, objects[i].y, objects[i].w, objects[i].h);
-//        env->SetObjectArrayElement(jObjArray, i, jObj);
-//    }
-//
-//    double elasped = ncnn::get_current_time() - start_time;
-//    __android_log_print(ANDROID_LOG_DEBUG, "YoloV5Ncnn", "%.2fms   detect", elasped);
-//
-//    return jObjArray;
-//}
-
 }
 
 using namespace cv;
@@ -741,24 +564,58 @@ double getOrientation(const vector<Point> &pts, Mat &img)
 extern "C" {
 
 JNIEXPORT void JNICALL Java_com_tencent_yolov5ncnn_OpenCV_DetectMat
-        (JNIEnv *, jclass, jlong mat, jboolean) {
-    // TODO: implement DetectMat()
+        (JNIEnv *env, jclass thiz, jlong mat, jboolean use_gpu, jobjectArray objs) {
+    if (use_gpu == JNI_TRUE && ncnn::get_gpu_count() == 0)
+    {
+        return;
+        //return env->NewStringUTF("no vulkan capable gpu");
+    }
+
     Mat &src = *(Mat *) mat;
+    //__android_log_print(ANDROID_LOG_DEBUG, "YoloV5Ncnn", "Execute1");
+
+    jsize ary_len = env ->GetArrayLength(objs);
+
+    Mat passed = Mat::zeros(src.size(), src.type());
+
+    for(int i =0; i < ary_len; i++)
+    {
+        Object points;
+
+        jobject obj = env->GetObjectArrayElement(objs, i);
+        jclass local_class = env->GetObjectClass(obj);
+
+        jfieldID xid = env ->GetFieldID(local_class, "x", "F");
+        jfieldID yid = env ->GetFieldID(local_class, "y", "F");
+        jfieldID hid = env ->GetFieldID(local_class, "h", "F");
+        jfieldID wid = env ->GetFieldID(local_class, "w", "F");
+
+        points.x = (int) env ->GetFloatField(obj, xid);
+        points.y = (int) env ->GetFloatField(obj, yid);
+        points.h = (int) env ->GetFloatField(obj, hid);
+        points.w = (int) env ->GetFloatField(obj, wid);
+
+        //__android_log_print(ANDROID_LOG_DEBUG, "YoloV5Ncnn", "Execute3");
+
+        //__android_log_print(ANDROID_LOG_DEBUG, "YoloV5Ncnn", "%f %f %f %f", points.x, points.y, points.h, points.w);
+
+        // x is shape[1], y is shape[0] <- in this code...
+        rectangle(passed, Point(points.x, points.y), Point(points.x + points.w, points.y + points.h), Scalar(255, 255, 255), FILLED);
+    }
+    bitwise_and(passed, src, passed);
 
     Mat gray;
-    cvtColor(src, gray, COLOR_BGR2GRAY);
+    cvtColor(passed, gray, COLOR_BGR2GRAY);
     equalizeHist(gray ,gray);
 
-    // Convert image to binary
-    Mat bw;
-    adaptiveThreshold(gray, bw, 200, ADAPTIVE_THRESH_MEAN_C, THRESH_BINARY, 15, 2);
 
+    // Convert image to binary
     Mat Blur;
     cv::Size B_Size(5, 5);
-    GaussianBlur(gray, Blur, B_Size, 0, 0);
+    //GaussianBlur(gray, Blur, B_Size, 0, 0);
 
     Mat Thres;
-    threshold(Blur, Thres, 127, 255, THRESH_BINARY | THRESH_OTSU);
+    threshold(gray, Thres, 127, 255, THRESH_BINARY | THRESH_OTSU);
     //adaptiveThreshold(Blur, Thres, 255, ADAPTIVE_THRESH_MEAN_C, THRESH_BINARY, 3, 11);
 
     Mat Outline;
@@ -768,6 +625,7 @@ JNIEXPORT void JNICALL Java_com_tencent_yolov5ncnn_OpenCV_DetectMat
     Mat kernel = getStructuringElement(MORPH_RECT, S_Size);
     Mat closed;
     morphologyEx(Outline, closed, MORPH_CLOSE, kernel);
+
 
     vector<vector<Point> > contours;
     findContours(closed, contours, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE);

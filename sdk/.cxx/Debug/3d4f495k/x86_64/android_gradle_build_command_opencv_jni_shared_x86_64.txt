@@ -1,0 +1,7 @@
+Executable : C:\Users\daeha\AppData\Local\Android\Sdk\cmake\3.18.1\bin\ninja.exe
+arguments : 
+-C
+D:\AndroidStudioProjects\myYoloV5_SUPERhard\myYoloV5_hard\sdk\.cxx\Debug\3d4f495k\x86_64
+opencv_jni_shared
+jvmArgs : 
+

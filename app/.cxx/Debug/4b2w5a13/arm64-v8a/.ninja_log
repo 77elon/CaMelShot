@@ -1,0 +1,13 @@
+# ninja log v5
+1	3570	671555992	CMakeFiles/yolov5ncnn.dir/yolov5ncnn_jni.cpp.o	526d7eb1e9214a9f
+3573	4765	671555993	D:/AndroidStudioProjects/myYoloV5_hard/app/build/intermediates/cxx/Debug/4b2w5a13/obj/arm64-v8a/libyolov5ncnn.so	b96349d1ecb6f833
+5	2640	671557655	CMakeFiles/yolov5ncnn.dir/yolov5ncnn_jni.cpp.o	526d7eb1e9214a9f
+2640	3731	671557656	D:/AndroidStudioProjects/myYoloV5_hard/app/build/intermediates/cxx/Debug/4b2w5a13/obj/arm64-v8a/libyolov5ncnn.so	b96349d1ecb6f833
+4	2201	671558029	CMakeFiles/yolov5ncnn.dir/yolov5ncnn_jni.cpp.o	526d7eb1e9214a9f
+2201	3042	671558030	D:/AndroidStudioProjects/myYoloV5_hard/app/build/intermediates/cxx/Debug/4b2w5a13/obj/arm64-v8a/libyolov5ncnn.so	b96349d1ecb6f833
+3	2033	671558102	CMakeFiles/yolov5ncnn.dir/yolov5ncnn_jni.cpp.o	526d7eb1e9214a9f
+2033	2829	671558103	D:/AndroidStudioProjects/myYoloV5_hard/app/build/intermediates/cxx/Debug/4b2w5a13/obj/arm64-v8a/libyolov5ncnn.so	b96349d1ecb6f833
+4	2573	672647537	CMakeFiles/yolov5ncnn.dir/yolov5ncnn_jni.cpp.o	526d7eb1e9214a9f
+2573	3988	672647538	D:/AndroidStudioProjects/myYoloV5_hard/app/build/intermediates/cxx/Debug/4b2w5a13/obj/arm64-v8a/libyolov5ncnn.so	b96349d1ecb6f833
+5	2322	672648990	CMakeFiles/yolov5ncnn.dir/yolov5ncnn_jni.cpp.o	526d7eb1e9214a9f
+2322	3149	672648991	D:/AndroidStudioProjects/myYoloV5_hard/app/build/intermediates/cxx/Debug/4b2w5a13/obj/arm64-v8a/libyolov5ncnn.so	b96349d1ecb6f833

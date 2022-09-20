@@ -1,0 +1,7 @@
+Executable : C:\Users\daeha\AppData\Local\Android\Sdk\cmake\3.18.1\bin\ninja.exe
+arguments : 
+-C
+D:\AndroidStudioProjects\myYoloV5_hard\app\.cxx\Debug\4b2w5a13\armeabi-v7a
+yolov5ncnn
+jvmArgs : 
+

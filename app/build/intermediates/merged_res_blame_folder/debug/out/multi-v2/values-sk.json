@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\AndroidStudioProjects\\myYoloV5_SUPERhard\\myYoloV5_hard\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sk\\values-sk.xml",
+            "outputFile": "D:\\AndroidStudioProjects\\myYoloV5_hard\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sk\\values-sk.xml",
             "map": [
                 {
                     "source": "C:\\Users\\daeha\\.gradle\\caches\\transforms-3\\305ebf24d7963f47f2a9c94e04210d59\\transformed\\appcompat-1.4.1\\res\\values-sk\\values-sk.xml",

@@ -28,6 +28,7 @@ import org.opencv.imgproc.Imgproc;
 import java.util.Collections;
 import java.util.List;
 
+
 public class CamActivity extends MainActivity implements CameraBridgeViewBase.CvCameraViewListener2 {
 
     //MYJOB - permission
@@ -146,11 +147,13 @@ public class CamActivity extends MainActivity implements CameraBridgeViewBase.Cv
         Bitmap bitmap =  Bitmap.createBitmap(matInput.cols(), matInput.rows(), Bitmap.Config.ARGB_8888);
         Utils.matToBitmap(matInput, bitmap);
         YoloV5Ncnn.Obj[] objects = yolov5ncnn.Detect(bitmap, true);
-        //OpenCV.DetectMat(matInput.getNativeObjAddr(), true);
-        showObjects(matInput, objects);
+        // input objects.length, point ary
+        if(!objects.equals(null))
+        {
+            OpenCV.DetectMat(matInput.getNativeObjAddr(), true, objects);
+            showObjects(matInput, objects);
+        }
         //return imageBlob;
-        //YoloV5Ncnn.Obj[] objects = yolov5ncnn.DetectMat(matInput, true);
-        //showObjects(matInput, objects);
 
         return matInput;
     }
