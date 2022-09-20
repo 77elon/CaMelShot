@@ -1,1 +1,0 @@
-D:\AndroidStudioProjects\opencv_Test\cv_a\build\intermediates\cxx\RelWithDebInfo\s3p5fw1t\obj\armeabi-v7a
