@@ -3,12 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/AndroidStudioProjects/myYoloV5_SUPERhard/myYoloV5_hard/app/src/main/res/layout/activity_camera.xml" value="0.18489583333333334" />
-        <entry key="..\:/AndroidStudioProjects/myYoloV5_SUPERhard/myYoloV5_hard/app/src/main/res/layout/main.xml" value="0.18489583333333334" />
+        <entry key="..\:/AndroidStudioProjects/CaMelShot/app/src/main/res/layout-land/activity_camera.xml" value="0.15652557319223986" />
+        <entry key="..\:/AndroidStudioProjects/CaMelShot/app/src/main/res/layout/activity_camera.xml" value="0.18489583333333334" />
+        <entry key="..\:/AndroidStudioProjects/myProject_CAM/app/src/main/res/layout-land/activity_camera.xml" value="0.15652557319223986" />
+        <entry key="..\:/AndroidStudioProjects/myProject_CAM/app/src/main/res/layout/activity_camera.xml" value="0.2526041666666667" />
+        <entry key="..\:/AndroidStudioProjects/myProject_CAM/app/src/main/res/layout/main.xml" value="0.2526041666666667" />
+        <entry key="..\:/android/CaMelShot/app/src/main/res/drawable-hpdi/test.xml" value="0.316" />
+        <entry key="..\:/android/CaMelShot/app/src/main/res/drawable-night-hdpi/background_rect.xml" value="0.316" />
+        <entry key="..\:/android/CaMelShot/app/src/main/res/drawable-night-hdpi/test.xml" value="0.316" />
+        <entry key="..\:/android/CaMelShot/app/src/main/res/drawable/background_rect.xml" value="0.547" />
+        <entry key="..\:/android/CaMelShot/app/src/main/res/drawable/background_rounding.xml" value="0.547" />
+        <entry key="..\:/android/CaMelShot/app/src/main/res/layout/activity_camera.xml" value="0.31302083333333336" />
+        <entry key="..\:/android/CaMelShot/app/src/main/res/layout/main.xml" value="0.5" />
+        <entry key="..\:/android/CaMelShot/app/src/main/res/layout/themes.xml" value="0.31302083333333336" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17_PREVIEW" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

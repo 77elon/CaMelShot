@@ -1,2 +1,0 @@
-ninja: Entering directory `D:\AndroidStudioProjects\myYoloV5_SUPERhard\myYoloV5_hard\sdk\.cxx\Debug\3d4f495k\x86'
-ninja: no work to do.

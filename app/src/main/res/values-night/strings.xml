@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CaMelShot</string>
+    <color name = "fontColor">#f0f0f0</color>
+    <color name = "back">#606060</color>
+    <color name = "btnColor">#808080</color>
+    <color name = "btnStroke">#000000</color>
+</resources>
+

@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">yolov5ncnn</string>h
+    <string name="app_name">CaMelShot</string>
+    <color name = "fontColor">#666666</color>
+    <color name = "back">#c2c2c2</color>
+    <color name = "btnColor">#cccccc</color>
+    <color name = "btnStroke">#ffffff</color>
 </resources>

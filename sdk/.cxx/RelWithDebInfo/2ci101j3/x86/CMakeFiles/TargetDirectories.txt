@@ -1,3 +1,0 @@
-D:/AndroidStudioProjects/myYoloV5_SUPERhard/myYoloV5_hard/sdk/.cxx/RelWithDebInfo/2ci101j3/x86/CMakeFiles/opencv_jni_shared.dir
-D:/AndroidStudioProjects/myYoloV5_SUPERhard/myYoloV5_hard/sdk/.cxx/RelWithDebInfo/2ci101j3/x86/CMakeFiles/edit_cache.dir
-D:/AndroidStudioProjects/myYoloV5_SUPERhard/myYoloV5_hard/sdk/.cxx/RelWithDebInfo/2ci101j3/x86/CMakeFiles/rebuild_cache.dir

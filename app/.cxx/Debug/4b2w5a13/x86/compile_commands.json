@@ -1,7 +1,0 @@
-[
-{
-  "directory": "D:/AndroidStudioProjects/myYoloV5_hard/app/.cxx/Debug/4b2w5a13/x86",
-  "command": "C:\\Users\\daeha\\AppData\\Local\\Android\\Sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=i686-none-linux-android30 --gcc-toolchain=C:/Users/daeha/AppData/Local/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/daeha/AppData/Local/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dyolov5ncnn_EXPORTS -isystem D:/AndroidStudioProjects/myYoloV5_hard/app/src/main/jni/x86/include/ncnn -isystem D:/AndroidStudioProjects/myYoloV5_hard/sdk/native/jni/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=gnu++2a -frtti -fopenmp -static-openmp -frtti -O0 -fno-limit-debug-info  -fPIC -fno-exceptions -pthread -o CMakeFiles\\yolov5ncnn.dir\\yolov5ncnn_jni.cpp.o -c D:\\AndroidStudioProjects\\myYoloV5_hard\\app\\src\\main\\jni\\yolov5ncnn_jni.cpp",
-  "file": "D:\\AndroidStudioProjects\\myYoloV5_hard\\app\\src\\main\\jni\\yolov5ncnn_jni.cpp"
-}
-]

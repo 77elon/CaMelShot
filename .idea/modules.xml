@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/myYoloV5_hard.iml" filepath="$PROJECT_DIR$/.idea/modules/myYoloV5_hard.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/myYoloV5_hard.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/myYoloV5_hard.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/OpenCV/myYoloV5_hard.sdk.iml" filepath="$PROJECT_DIR$/.idea/modules/OpenCV/myYoloV5_hard.sdk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CaMelShot.iml" filepath="$PROJECT_DIR$/.idea/modules/CaMelShot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/CaMelShot.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/CaMelShot.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/CaMelShot.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/CaMelShot.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/CaMelShot.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/CaMelShot.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/CaMelShot.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/CaMelShot.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sdk/CaMelShot.sdk.iml" filepath="$PROJECT_DIR$/.idea/modules/sdk/CaMelShot.sdk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sdk/CaMelShot.sdk.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/sdk/CaMelShot.sdk.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sdk/CaMelShot.sdk.main.iml" filepath="$PROJECT_DIR$/.idea/modules/sdk/CaMelShot.sdk.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sdk/CaMelShot.sdk.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/sdk/CaMelShot.sdk.unitTest.iml" />
     </modules>
   </component>
 </project>

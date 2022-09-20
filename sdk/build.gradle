@@ -103,8 +103,6 @@ android {
         minSdkVersion 21
         targetSdkVersion 26
 
-        versionCode openCVersionCode
-        versionName openCVersionName
 
         externalNativeBuild {
             cmake {
@@ -145,6 +143,7 @@ android {
             path (project.projectDir.toString() + '/libcxx_helper/CMakeLists.txt')
         }
     }
+    ndkVersion '21.3.6528147'
 }
 
 dependencies {

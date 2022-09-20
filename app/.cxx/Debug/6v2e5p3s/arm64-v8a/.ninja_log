@@ -1,5 +1,0 @@
-# ninja log v5
-1	2430	671552755	CMakeFiles/yolov5ncnn.dir/yolov5ncnn_jni.cpp.o	d2443a5be86ecd41
-2432	3802	671552757	D:/AndroidStudioProjects/myYoloV5_SUPERhard/myYoloV5_hard/app/build/intermediates/cxx/Debug/6v2e5p3s/obj/arm64-v8a/libyolov5ncnn.so	15fe626e5f557968
-4	2092	671554123	CMakeFiles/yolov5ncnn.dir/yolov5ncnn_jni.cpp.o	d2443a5be86ecd41
-2092	3039	671554124	D:/AndroidStudioProjects/myYoloV5_SUPERhard/myYoloV5_hard/app/build/intermediates/cxx/Debug/6v2e5p3s/obj/arm64-v8a/libyolov5ncnn.so	15fe626e5f557968

@@ -1,3 +1,0 @@
-ninja: Entering directory `D:\AndroidStudioProjects\myYoloV5_SUPERhard\myYoloV5_hard\sdk\.cxx\Debug\3d4f495k\x86_64'
-[1/2] Building CXX object CMakeFiles/opencv_jni_shared.dir/dummy.cpp.o
-[2/2] Linking CXX static library libopencv_jni_shared.a

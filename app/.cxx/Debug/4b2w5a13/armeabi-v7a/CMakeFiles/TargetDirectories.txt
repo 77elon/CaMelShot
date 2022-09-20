@@ -1,3 +1,0 @@
-D:/AndroidStudioProjects/myYoloV5_hard/app/.cxx/Debug/4b2w5a13/armeabi-v7a/CMakeFiles/yolov5ncnn.dir
-D:/AndroidStudioProjects/myYoloV5_hard/app/.cxx/Debug/4b2w5a13/armeabi-v7a/CMakeFiles/edit_cache.dir
-D:/AndroidStudioProjects/myYoloV5_hard/app/.cxx/Debug/4b2w5a13/armeabi-v7a/CMakeFiles/rebuild_cache.dir

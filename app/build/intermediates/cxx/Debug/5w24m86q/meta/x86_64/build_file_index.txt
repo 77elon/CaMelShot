@@ -1,1 +1,0 @@
-D:\AndroidStudioProjects\myYoloV5_SUPERhard\myYoloV5_hard\app\src\main\jni\CMakeLists.txt
