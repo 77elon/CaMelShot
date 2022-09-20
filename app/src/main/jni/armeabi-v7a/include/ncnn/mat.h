@@ -20,8 +20,11 @@
 #if __ARM_NEON
 #include <arm_neon.h>
 #endif
+#if __SSE2__
+#include <emmintrin.h>
 #if __AVX__
 #include <immintrin.h>
+#endif
 #endif
 #if __mips_msa
 #include <msa.h>
@@ -116,10 +119,16 @@ public:
     void fill(float16x8_t _v);
 #endif // __ARM_FEATURE_FP16_VECTOR_ARITHMETIC
 #endif // __ARM_NEON
+#if __SSE2__
 #if __AVX__
+#if __AVX512F__
+    void fill(__m512 _v);
+#endif // __AVX512F__
     void fill(__m256 _v);
-    void fill(__m128i _v);
 #endif // __AVX__
+    void fill(__m128 _v);
+    void fill(__m128i _v);
+#endif // __SSE2__
 #if __mips_msa
     void fill(v4f32 _v);
 #endif // __mips_msa
@@ -771,6 +780,7 @@ enum BorderType
 NCNN_EXPORT void copy_make_border(const Mat& src, Mat& dst, int top, int bottom, int left, int right, int type, float v, const Option& opt = Option());
 NCNN_EXPORT void copy_make_border_3d(const Mat& src, Mat& dst, int top, int bottom, int left, int right, int front, int behind, int type, float v, const Option& opt = Option());
 NCNN_EXPORT void copy_cut_border(const Mat& src, Mat& dst, int top, int bottom, int left, int right, const Option& opt = Option());
+NCNN_EXPORT void copy_cut_border_3d(const Mat& src, Mat& dst, int top, int bottom, int left, int right, int front, int behind, const Option& opt = Option());
 NCNN_EXPORT void resize_nearest(const Mat& src, Mat& dst, int w, int h, const Option& opt = Option());
 NCNN_EXPORT void resize_bilinear(const Mat& src, Mat& dst, int w, int h, const Option& opt = Option());
 NCNN_EXPORT void resize_bicubic(const Mat& src, Mat& dst, int w, int h, const Option& opt = Option());
@@ -1070,7 +1080,21 @@ NCNN_FORCEINLINE void Mat::fill(float16x8_t _v)
 }
 #endif // __ARM_FEATURE_FP16_VECTOR_ARITHMETIC
 #endif // __ARM_NEON
+
+#if __SSE2__
 #if __AVX__
+#if __AVX512F__
+NCNN_FORCEINLINE void Mat::fill(__m512 _v)
+{
+    int size = (int)total();
+    float* ptr = (float*)data;
+    for (int i = 0; i < size; i++)
+    {
+        _mm512_storeu_ps(ptr, _v);
+        ptr += 16;
+    }
+}
+#endif // __AVX512F__
 NCNN_FORCEINLINE void Mat::fill(__m256 _v)
 {
     int size = (int)total();
@@ -1081,6 +1105,18 @@ NCNN_FORCEINLINE void Mat::fill(__m256 _v)
         ptr += 8;
     }
 }
+#endif // __AVX__
+NCNN_FORCEINLINE void Mat::fill(__m128 _v)
+{
+    int size = (int)total();
+    float* ptr = (float*)data;
+    for (int i = 0; i < size; i++)
+    {
+        _mm_storeu_ps(ptr, _v);
+        ptr += 4;
+    }
+}
+
 NCNN_FORCEINLINE void Mat::fill(__m128i _v)
 {
     int size = (int)total();
@@ -1091,7 +1127,7 @@ NCNN_FORCEINLINE void Mat::fill(__m128i _v)
         ptr += 8;
     }
 }
-#endif // __AVX__
+#endif // __SSE2__
 
 #if __mips_msa
 NCNN_FORCEINLINE void Mat::fill(v4f32 _v)

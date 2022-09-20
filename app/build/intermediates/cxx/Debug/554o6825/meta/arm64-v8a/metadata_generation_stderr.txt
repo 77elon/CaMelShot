@@ -1,0 +1,26 @@
+CMake Error at C:/Users/daeha/AppData/Local/Android/Sdk/cmake/3.18.1/share/cmake-3.18/Modules/CMakeTestCXXCompiler.cmake:59 (message):
+  The C++ compiler
+
+    "C:/Users/daeha/AppData/Local/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe"
+
+  is not able to compile a simple test program.
+
+  It fails with the following output:
+
+    Change Dir: D:/AndroidStudioProjects/myYoloV5_SUPERhard/myYoloV5_hard/app/.cxx/Debug/554o6825/arm64-v8a/CMakeFiles/CMakeTmp
+    
+    Run Build Command(s):C:\Users\daeha\AppData\Local\Android\Sdk\cmake\3.18.1\bin\ninja.exe cmTC_eb5e2 && [1/2] Building CXX object CMakeFiles/cmTC_eb5e2.dir/testCXXCompiler.cxx.o
+    FAILED: CMakeFiles/cmTC_eb5e2.dir/testCXXCompiler.cxx.o 
+    C:\Users\daeha\AppData\Local\Android\Sdk\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=aarch64-none-linux-android30 --gcc-toolchain=C:/Users/daeha/AppData/Local/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/daeha/AppData/Local/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c++17 -qrtti -fsigned-char  -fPIE -MD -MT CMakeFiles/cmTC_eb5e2.dir/testCXXCompiler.cxx.o -MF CMakeFiles\cmTC_eb5e2.dir\testCXXCompiler.cxx.o.d -o CMakeFiles/cmTC_eb5e2.dir/testCXXCompiler.cxx.o -c testCXXCompiler.cxx
+    clang++: error: unknown argument '-qrtti'; did you mean '-frtti'?
+    ninja: build stopped: subcommand failed.
+    
+    
+
+  
+
+  CMake will not be able to correctly generate this project.
+Call Stack (most recent call first):
+  CMakeLists.txt:1 (project)
+
+

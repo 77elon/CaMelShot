@@ -28,18 +28,14 @@ namespace gimpl
 {
     // Forward-declare an internal class
     class GCPUExecutable;
-
-    namespace render
-    {
-    namespace ocv
-    {
-        class GRenderExecutable;
-    }
-    }
 } // namespace gimpl
 
 namespace gapi
 {
+/**
+ * @brief This namespace contains G-API CPU backend functions,
+ * structures, and symbols.
+ */
 namespace cpu
 {
     /**
@@ -101,6 +97,7 @@ public:
 
     const cv::Scalar& inVal(int input);
     cv::Scalar& outValR(int output); // FIXME: Avoid cv::Scalar s = ctx.outValR()
+    cv::MediaFrame& outFrame(int output);
     template<typename T> std::vector<T>& outVecR(int output) // FIXME: the same issue
     {
         return outVecRef(output).wref<T>();
@@ -128,7 +125,6 @@ protected:
     std::unordered_map<std::size_t, GRunArgP> m_results;
 
     friend class gimpl::GCPUExecutable;
-    friend class gimpl::render::ocv::GRenderExecutable;
 };
 
 class GAPI_EXPORTS GCPUKernel
@@ -164,7 +160,7 @@ template<> struct get_in<cv::GMatP>
 };
 template<> struct get_in<cv::GFrame>
 {
-    static cv::Mat    get(GCPUContext &ctx, int idx) { return get_in<cv::GMat>::get(ctx, idx); }
+    static cv::MediaFrame get(GCPUContext &ctx, int idx) { return ctx.inArg<cv::MediaFrame>(idx); }
 };
 template<> struct get_in<cv::GScalar>
 {
@@ -186,6 +182,11 @@ template<> struct get_in<cv::GArray<cv::GMat> >: public get_in<cv::GArray<cv::Ma
 
 //FIXME(dm): GArray<Scalar>/GArray<GScalar> conversion should be done more gracefully in the system
 template<> struct get_in<cv::GArray<cv::GScalar> >: public get_in<cv::GArray<cv::Scalar> >
+{
+};
+
+// FIXME(dm): GArray<vector<U>>/GArray<GArray<U>> conversion should be done more gracefully in the system
+template<typename U> struct get_in<cv::GArray<cv::GArray<U>> >: public get_in<cv::GArray<std::vector<U>> >
 {
 };
 
@@ -258,6 +259,13 @@ template<> struct get_out<cv::GScalar>
         return ctx.outValR(idx);
     }
 };
+template<> struct get_out<cv::GFrame>
+{
+    static cv::MediaFrame& get(GCPUContext &ctx, int idx)
+    {
+        return ctx.outFrame(idx);
+    }
+};
 template<typename U> struct get_out<cv::GArray<U>>
 {
     static std::vector<U>& get(GCPUContext &ctx, int idx)
@@ -268,6 +276,11 @@ template<typename U> struct get_out<cv::GArray<U>>
 
 //FIXME(dm): GArray<Mat>/GArray<GMat> conversion should be done more gracefully in the system
 template<> struct get_out<cv::GArray<cv::GMat> >: public get_out<cv::GArray<cv::Mat> >
+{
+};
+
+// FIXME(dm): GArray<vector<U>>/GArray<GArray<U>> conversion should be done more gracefully in the system
+template<typename U> struct get_out<cv::GArray<cv::GArray<U>> >: public get_out<cv::GArray<std::vector<U>> >
 {
 };
 
@@ -443,7 +456,7 @@ struct OCVStCallHelper<Impl, std::tuple<Ins...>, std::tuple<Outs...>> :
 template<class Impl, class K>
 class GCPUKernelImpl: public cv::detail::KernelTag
 {
-    using CallHelper = detail::OCVCallHelper<Impl, typename K::InArgs, typename K::OutArgs>;
+    using CallHelper = cv::detail::OCVCallHelper<Impl, typename K::InArgs, typename K::OutArgs>;
 
 public:
     using API = K;
@@ -474,7 +487,7 @@ public:
 #define GAPI_OCV_KERNEL_ST(Name, API, State)                   \
     struct Name: public cv::GCPUStKernelImpl<Name, API, State> \
 
-
+/// @private
 class gapi::cpu::GOCVFunctor : public gapi::GFunctor
 {
 public:
@@ -497,7 +510,7 @@ private:
 template<typename K, typename Callable>
 gapi::cpu::GOCVFunctor gapi::cpu::ocv_kernel(Callable& c)
 {
-    using P = detail::OCVCallHelper<Callable, typename K::InArgs, typename K::OutArgs>;
+    using P = cv::detail::OCVCallHelper<Callable, typename K::InArgs, typename K::OutArgs>;
     return GOCVFunctor{ K::id()
                       , &K::getOutMeta
                       , std::bind(&P::callFunctor, std::placeholders::_1, std::ref(c))
@@ -507,7 +520,7 @@ gapi::cpu::GOCVFunctor gapi::cpu::ocv_kernel(Callable& c)
 template<typename K, typename Callable>
 gapi::cpu::GOCVFunctor gapi::cpu::ocv_kernel(const Callable& c)
 {
-    using P = detail::OCVCallHelper<Callable, typename K::InArgs, typename K::OutArgs>;
+    using P = cv::detail::OCVCallHelper<Callable, typename K::InArgs, typename K::OutArgs>;
     return GOCVFunctor{ K::id()
                       , &K::getOutMeta
                       , std::bind(&P::callFunctor, std::placeholders::_1, c)

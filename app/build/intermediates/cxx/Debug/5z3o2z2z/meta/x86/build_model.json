@@ -1,0 +1,174 @@
+{
+  "abi": "X86",
+  "info": {
+    "abi": "X86",
+    "bitness": 32,
+    "deprecated": false,
+    "default": true
+  },
+  "cxxBuildFolder": "D:\\AndroidStudioProjects\\myYoloV5_SUPERhard\\myYoloV5_hard\\app\\.cxx\\Debug\\5z3o2z2z\\x86",
+  "soFolder": "D:\\AndroidStudioProjects\\myYoloV5_SUPERhard\\myYoloV5_hard\\app\\build\\intermediates\\cxx\\Debug\\5z3o2z2z\\obj\\x86",
+  "soRepublishFolder": "D:\\AndroidStudioProjects\\myYoloV5_SUPERhard\\myYoloV5_hard\\app\\build\\intermediates\\cmake\\debug\\obj\\x86",
+  "abiPlatformVersion": 30,
+  "cmake": {
+    "effectiveConfiguration": {
+      "inheritEnvironments": [],
+      "variables": []
+    }
+  },
+  "variant": {
+    "buildSystemArgumentList": [
+      "-DANDROID_STL\u003dc++_static",
+      "-DANDROID_TOOLCHAIN\u003dclang"
+    ],
+    "cFlagsList": [],
+    "cppFlagsList": [
+      "-std\u003dc++17 -frtti -fexceptions -fsigned-char"
+    ],
+    "variantName": "debug",
+    "soFolder": "D:\\AndroidStudioProjects\\myYoloV5_SUPERhard\\myYoloV5_hard\\app\\build\\intermediates\\cxx\\Debug\\5z3o2z2z\\obj",
+    "soRepublishFolder": "D:\\AndroidStudioProjects\\myYoloV5_SUPERhard\\myYoloV5_hard\\app\\build\\intermediates\\cmake\\debug\\obj",
+    "cxxBuildFolder": "D:\\AndroidStudioProjects\\myYoloV5_SUPERhard\\myYoloV5_hard\\app\\.cxx\\Debug\\5z3o2z2z",
+    "intermediatesFolder": "D:\\AndroidStudioProjects\\myYoloV5_SUPERhard\\myYoloV5_hard\\app\\build\\intermediates\\cxx\\Debug\\5z3o2z2z",
+    "isDebuggableEnabled": true,
+    "validAbiList": [
+      "ARMEABI_V7A",
+      "ARM64_V8A",
+      "X86",
+      "X86_64"
+    ],
+    "buildTargetSet": [],
+    "implicitBuildTargetSet": [],
+    "cmakeSettingsConfiguration": "android-gradle-plugin-predetermined-name",
+    "module": {
+      "cxxFolder": "D:\\AndroidStudioProjects\\myYoloV5_SUPERhard\\myYoloV5_hard\\app\\.cxx",
+      "intermediatesBaseFolder": "D:\\AndroidStudioProjects\\myYoloV5_SUPERhard\\myYoloV5_hard\\app\\build\\intermediates",
+      "intermediatesFolder": "D:\\AndroidStudioProjects\\myYoloV5_SUPERhard\\myYoloV5_hard\\app\\build\\intermediates\\cxx",
+      "gradleModulePathName": ":app",
+      "moduleRootFolder": "D:\\AndroidStudioProjects\\myYoloV5_SUPERhard\\myYoloV5_hard\\app",
+      "moduleBuildFile": "D:\\AndroidStudioProjects\\myYoloV5_SUPERhard\\myYoloV5_hard\\app\\build.gradle",
+      "makeFile": "D:\\AndroidStudioProjects\\myYoloV5_SUPERhard\\myYoloV5_hard\\app\\src\\main\\jni\\CMakeLists.txt",
+      "buildSystem": "CMAKE",
+      "ndkFolder": "C:\\Users\\daeha\\AppData\\Local\\Android\\Sdk\\ndk\\21.4.7075529",
+      "ndkVersion": "21.4.7075529",
+      "ndkSupportedAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultStl": "LIBCXX_STATIC",
+      "ndkMetaPlatforms": {
+        "min": 16,
+        "max": 30,
+        "aliases": {
+          "20": 19,
+          "25": 24,
+          "J": 16,
+          "J-MR1": 17,
+          "J-MR2": 18,
+          "K": 19,
+          "L": 21,
+          "L-MR1": 22,
+          "M": 23,
+          "N": 24,
+          "N-MR1": 24,
+          "O": 26,
+          "O-MR1": 27,
+          "P": 28,
+          "Q": 29,
+          "R": 30
+        }
+      },
+      "ndkMetaAbiList": [
+        {
+          "abi": "ARMEABI_V7A",
+          "bitness": 32,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "ARM64_V8A",
+          "bitness": 64,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "X86",
+          "bitness": 32,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "X86_64",
+          "bitness": 64,
+          "deprecated": false,
+          "default": true
+        }
+      ],
+      "cmakeToolchainFile": "C:\\Users\\daeha\\AppData\\Local\\Android\\Sdk\\ndk\\21.4.7075529\\build\\cmake\\android.toolchain.cmake",
+      "cmake": {
+        "isValidCmakeAvailable": true,
+        "cmakeExe": "C:\\Users\\daeha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\cmake.exe",
+        "minimumCmakeVersion": "3.10.2",
+        "ninjaExe": "C:\\Users\\daeha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe"
+      },
+      "stlSharedObjectMap": {
+        "LIBCXX_SHARED": {
+          "ARMEABI_V7A": "C:\\Users\\daeha\\AppData\\Local\\Android\\Sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\arm-linux-androideabi\\libc++_shared.so",
+          "ARM64_V8A": "C:\\Users\\daeha\\AppData\\Local\\Android\\Sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\aarch64-linux-android\\libc++_shared.so",
+          "X86": "C:\\Users\\daeha\\AppData\\Local\\Android\\Sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\i686-linux-android\\libc++_shared.so",
+          "X86_64": "C:\\Users\\daeha\\AppData\\Local\\Android\\Sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\x86_64-linux-android\\libc++_shared.so"
+        },
+        "LIBCXX_STATIC": {},
+        "NONE": {},
+        "SYSTEM": {}
+      },
+      "project": {
+        "rootBuildGradleFolder": "D:\\AndroidStudioProjects\\myYoloV5_SUPERhard\\myYoloV5_hard",
+        "sdkFolder": "C:\\Users\\daeha\\AppData\\Local\\Android\\Sdk",
+        "isBuildOnlyTargetAbiEnabled": true,
+        "isCmakeBuildCohabitationEnabled": false,
+        "isPrefabEnabled": false
+      },
+      "outputOptions": []
+    },
+    "prefabClassPathFileCollection": [],
+    "prefabPackageDirectoryListFileCollection": [],
+    "stlType": "c++_static",
+    "optimizationTag": "Debug"
+  },
+  "buildSettings": {
+    "environmentVariables": []
+  },
+  "prefabFolder": "D:\\AndroidStudioProjects\\myYoloV5_SUPERhard\\myYoloV5_hard\\app\\.cxx\\Debug\\5z3o2z2z\\prefab\\x86",
+  "isActiveAbi": true,
+  "fullConfigurationHash": "5z3o2z2z5d57nc662z313t616ew2k1u466k3on194g292cy5r4d212v1x3o",
+  "configurationArguments": [
+    "-HD:\\AndroidStudioProjects\\myYoloV5_SUPERhard\\myYoloV5_hard\\app\\src\\main\\jni",
+    "-DCMAKE_SYSTEM_NAME\u003dAndroid",
+    "-DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON",
+    "-DCMAKE_SYSTEM_VERSION\u003d30",
+    "-DANDROID_PLATFORM\u003dandroid-30",
+    "-DANDROID_ABI\u003dx86",
+    "-DCMAKE_ANDROID_ARCH_ABI\u003dx86",
+    "-DANDROID_NDK\u003dC:\\Users\\daeha\\AppData\\Local\\Android\\Sdk\\ndk\\21.4.7075529",
+    "-DCMAKE_ANDROID_NDK\u003dC:\\Users\\daeha\\AppData\\Local\\Android\\Sdk\\ndk\\21.4.7075529",
+    "-DCMAKE_TOOLCHAIN_FILE\u003dC:\\Users\\daeha\\AppData\\Local\\Android\\Sdk\\ndk\\21.4.7075529\\build\\cmake\\android.toolchain.cmake",
+    "-DCMAKE_MAKE_PROGRAM\u003dC:\\Users\\daeha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe",
+    "-DCMAKE_CXX_FLAGS\u003d-std\u003dc++17 -frtti -fexceptions -fsigned-char",
+    "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003dD:\\AndroidStudioProjects\\myYoloV5_SUPERhard\\myYoloV5_hard\\app\\build\\intermediates\\cxx\\Debug\\5z3o2z2z\\obj\\x86",
+    "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003dD:\\AndroidStudioProjects\\myYoloV5_SUPERhard\\myYoloV5_hard\\app\\build\\intermediates\\cxx\\Debug\\5z3o2z2z\\obj\\x86",
+    "-DCMAKE_BUILD_TYPE\u003dDebug",
+    "-BD:\\AndroidStudioProjects\\myYoloV5_SUPERhard\\myYoloV5_hard\\app\\.cxx\\Debug\\5z3o2z2z\\x86",
+    "-GNinja",
+    "-DANDROID_STL\u003dc++_static",
+    "-DANDROID_TOOLCHAIN\u003dclang"
+  ]
+}

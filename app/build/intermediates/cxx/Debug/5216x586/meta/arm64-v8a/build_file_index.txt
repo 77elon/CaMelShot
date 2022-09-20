@@ -1,0 +1,12 @@
+D:\AndroidStudioProjects\myYoloV5_SUPERhard\myYoloV5_hard\app\src\main\jni\arm64-v8a\lib\cmake\glslangTargets-release.cmake
+D:\AndroidStudioProjects\myYoloV5_SUPERhard\myYoloV5_hard\app\src\main\jni\arm64-v8a\lib\cmake\glslangTargets.cmake
+D:\AndroidStudioProjects\myYoloV5_SUPERhard\myYoloV5_hard\app\src\main\jni\arm64-v8a\lib\cmake\ncnn\ncnn-release.cmake
+D:\AndroidStudioProjects\myYoloV5_SUPERhard\myYoloV5_hard\app\src\main\jni\arm64-v8a\lib\cmake\ncnn\ncnn.cmake
+D:\AndroidStudioProjects\myYoloV5_SUPERhard\myYoloV5_hard\app\src\main\jni\arm64-v8a\lib\cmake\ncnn\ncnnConfig.cmake
+D:\AndroidStudioProjects\myYoloV5_SUPERhard\myYoloV5_hard\app\src\main\jni\arm64-v8a\lib\cmake\OGLCompilerTargets-release.cmake
+D:\AndroidStudioProjects\myYoloV5_SUPERhard\myYoloV5_hard\app\src\main\jni\arm64-v8a\lib\cmake\OGLCompilerTargets.cmake
+D:\AndroidStudioProjects\myYoloV5_SUPERhard\myYoloV5_hard\app\src\main\jni\arm64-v8a\lib\cmake\OSDependentTargets-release.cmake
+D:\AndroidStudioProjects\myYoloV5_SUPERhard\myYoloV5_hard\app\src\main\jni\arm64-v8a\lib\cmake\OSDependentTargets.cmake
+D:\AndroidStudioProjects\myYoloV5_SUPERhard\myYoloV5_hard\app\src\main\jni\arm64-v8a\lib\cmake\SPIRVTargets-release.cmake
+D:\AndroidStudioProjects\myYoloV5_SUPERhard\myYoloV5_hard\app\src\main\jni\arm64-v8a\lib\cmake\SPIRVTargets.cmake
+D:\AndroidStudioProjects\myYoloV5_SUPERhard\myYoloV5_hard\app\src\main\jni\CMakeLists.txt

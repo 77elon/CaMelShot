@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "D:\\AndroidStudioProjects\\myYoloV5_SUPERhard\\myYoloV5_hard\\app\\build\\intermediates\\merged_res\\debug\\drawable_juck.jpg.flat",
+        "source": "D:\\AndroidStudioProjects\\myYoloV5_SUPERhard\\myYoloV5_hard\\app\\src\\main\\res\\drawable\\juck.jpg"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\myYoloV5_SUPERhard\\myYoloV5_hard\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_camera.xml.flat",
+        "source": "D:\\AndroidStudioProjects\\myYoloV5_SUPERhard\\myYoloV5_hard\\app\\src\\main\\res\\layout\\activity_camera.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\myYoloV5_SUPERhard\\myYoloV5_hard\\app\\build\\intermediates\\merged_res\\debug\\layout_main.xml.flat",
+        "source": "D:\\AndroidStudioProjects\\myYoloV5_SUPERhard\\myYoloV5_hard\\app\\src\\main\\res\\layout\\main.xml"
+    }
+]

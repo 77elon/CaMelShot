@@ -57,6 +57,8 @@ template<class Tag>
 struct GIOProtoArgs
 {
 public:
+    // NB: Used by python wrapper
+    GIOProtoArgs() = default;
     explicit GIOProtoArgs(const GProtoArgs& args) : m_args(args) {}
     explicit GIOProtoArgs(GProtoArgs &&args)      : m_args(std::move(args)) {}
 
@@ -69,7 +71,7 @@ public:
      * It's an ordinary overload of addition assignment operator.
      *
      * Example of usage:
-     * @snippet dynamic_graph.cpp  GIOProtoArgs usage
+     * @snippet samples/cpp/tutorial_code/gapi/doc_snippets/dynamic_graph_snippets.cpp  GIOProtoArgs usage
      *
      */
     template<typename Tg>

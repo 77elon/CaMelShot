@@ -45,15 +45,15 @@ set_target_properties(libwebp PROPERTIES
 list(APPEND _IMPORT_CHECK_TARGETS libwebp )
 list(APPEND _IMPORT_CHECK_FILES_FOR_libwebp "${_IMPORT_PREFIX}/sdk/native/3rdparty/libs/x86_64/liblibwebp.a" )
 
-# Import target "libjasper" for configuration "Release"
-set_property(TARGET libjasper APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
-set_target_properties(libjasper PROPERTIES
+# Import target "libopenjp2" for configuration "Release"
+set_property(TARGET libopenjp2 APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
+set_target_properties(libopenjp2 PROPERTIES
   IMPORTED_LINK_INTERFACE_LANGUAGES_RELEASE "C"
-  IMPORTED_LOCATION_RELEASE "${_IMPORT_PREFIX}/sdk/native/3rdparty/libs/x86_64/liblibjasper.a"
+  IMPORTED_LOCATION_RELEASE "${_IMPORT_PREFIX}/sdk/native/3rdparty/libs/x86_64/liblibopenjp2.a"
   )
 
-list(APPEND _IMPORT_CHECK_TARGETS libjasper )
-list(APPEND _IMPORT_CHECK_FILES_FOR_libjasper "${_IMPORT_PREFIX}/sdk/native/3rdparty/libs/x86_64/liblibjasper.a" )
+list(APPEND _IMPORT_CHECK_TARGETS libopenjp2 )
+list(APPEND _IMPORT_CHECK_FILES_FOR_libopenjp2 "${_IMPORT_PREFIX}/sdk/native/3rdparty/libs/x86_64/liblibopenjp2.a" )
 
 # Import target "libpng" for configuration "Release"
 set_property(TARGET libpng APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)

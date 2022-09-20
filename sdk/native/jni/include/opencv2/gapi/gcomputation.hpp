@@ -37,14 +37,12 @@ namespace detail
 }
 
 // Forward-declare the serialization objects
-namespace gimpl {
+namespace gapi {
 namespace s11n {
-namespace I {
-    struct IStream;
-    struct OStream;
-} // namespace I
+    struct IIStream;
+    struct IOStream;
 } // namespace s11n
-} // namespace gimpl
+} // namespace gapi
 
 /**
  * \addtogroup gapi_main_classes
@@ -63,11 +61,11 @@ namespace I {
  * executed. The below example expresses calculation of Sobel operator
  * for edge detection (\f$G = \sqrt{G_x^2 + G_y^2}\f$):
  *
- * @snippet modules/gapi/samples/api_ref_snippets.cpp graph_def
+ * @snippet samples/cpp/tutorial_code/gapi/doc_snippets/api_ref_snippets.cpp graph_def
  *
  * Full pipeline can be now captured with this object declaration:
  *
- * @snippet modules/gapi/samples/api_ref_snippets.cpp graph_cap_full
+ * @snippet samples/cpp/tutorial_code/gapi/doc_snippets/api_ref_snippets.cpp graph_cap_full
  *
  * Input/output data objects on which a call graph should be
  * reconstructed are passed using special wrappers cv::GIn and
@@ -80,7 +78,7 @@ namespace I {
  * expects that image gradients are already pre-calculated may be
  * defined like this:
  *
- * @snippet modules/gapi/samples/api_ref_snippets.cpp graph_cap_sub
+ * @snippet samples/cpp/tutorial_code/gapi/doc_snippets/api_ref_snippets.cpp graph_cap_sub
  *
  * The resulting graph would expect two inputs and produce one
  * output. In this case, it doesn't matter if gx/gy data objects are
@@ -118,7 +116,7 @@ namespace I {
  *
  * @sa GCompiled
  */
-class GAPI_EXPORTS GComputation
+class GAPI_EXPORTS_W GComputation
 {
 public:
     class Priv;
@@ -132,7 +130,7 @@ public:
      * Graph can be defined in-place directly at the moment of its
      * construction with a lambda:
      *
-     * @snippet modules/gapi/samples/api_ref_snippets.cpp graph_gen
+     * @snippet samples/cpp/tutorial_code/gapi/doc_snippets/api_ref_snippets.cpp graph_gen
      *
      * This may be useful since all temporary objects (cv::GMats) and
      * namespaces can be localized to scope of lambda, without
@@ -161,8 +159,8 @@ public:
      *
      * @sa @ref gapi_data_objects
      */
-    GComputation(GProtoInputArgs &&ins,
-                 GProtoOutputArgs &&outs);             // Arg-to-arg overload
+    GAPI_WRAP GComputation(GProtoInputArgs &&ins,
+                           GProtoOutputArgs &&outs);             // Arg-to-arg overload
 
     // 2. Syntax sugar and compatibility overloads
     /**
@@ -172,7 +170,7 @@ public:
      * @param in input GMat of the defined unary computation
      * @param out output GMat of the defined unary computation
      */
-    GComputation(GMat in, GMat out);                   // Unary overload
+    GAPI_WRAP GComputation(GMat in, GMat out);  // Unary overload
 
     /**
      * @brief Defines an unary (one input -- one output) computation
@@ -181,7 +179,7 @@ public:
      * @param in input GMat of the defined unary computation
      * @param out output GScalar of the defined unary computation
      */
-    GComputation(GMat in, GScalar out);                // Unary overload (scalar)
+    GAPI_WRAP GComputation(GMat in, GScalar out);      // Unary overload (scalar)
 
     /**
      * @brief Defines a binary (two inputs -- one output) computation
@@ -191,7 +189,7 @@ public:
      * @param in2 second input GMat of the defined binary computation
      * @param out output GMat of the defined binary computation
      */
-    GComputation(GMat in1, GMat in2, GMat out);        // Binary overload
+    GAPI_WRAP GComputation(GMat in1, GMat in2, GMat out);        // Binary overload
 
     /**
      * @brief Defines a binary (two inputs -- one output) computation
@@ -260,6 +258,10 @@ public:
     void apply(GRunArgs &&ins, GRunArgsP &&outs, GCompileArgs &&args = {});       // Arg-to-arg overload
 
     /// @private -- Exclude this function from OpenCV documentation
+    GAPI_WRAP GRunArgs apply(const cv::detail::ExtractArgsCallback  &callback,
+                                   GCompileArgs                    &&args = {});
+
+    /// @private -- Exclude this function from OpenCV documentation
     void apply(const std::vector<cv::Mat>& ins,                                   // Compatibility overload
                const std::vector<cv::Mat>& outs,
                GCompileArgs &&args = {});
@@ -275,7 +277,7 @@ public:
      * @param args compilation arguments for underlying compilation
      * process.
      */
-    void apply(cv::Mat in, cv::Mat &out, GCompileArgs &&args = {});               // Unary overload
+    void apply(cv::Mat in, cv::Mat &out, GCompileArgs &&args = {}); // Unary overload
 
     /**
      * @brief Execute an unary computation (with compilation on the fly)
@@ -286,7 +288,7 @@ public:
      * @param args compilation arguments for underlying compilation
      * process.
      */
-    void apply(cv::Mat in, cv::Scalar &out, GCompileArgs &&args = {});            // Unary overload (scalar)
+    void apply(cv::Mat in, cv::Scalar &out, GCompileArgs &&args = {}); // Unary overload (scalar)
 
     /**
      * @brief Execute a binary computation (with compilation on the fly)
@@ -435,7 +437,7 @@ public:
      *
      * @sa @ref gapi_compile_args
      */
-    GStreamingCompiled compileStreaming(GMetaArgs &&in_metas, GCompileArgs &&args = {});
+    GAPI_WRAP GStreamingCompiled compileStreaming(GMetaArgs &&in_metas, GCompileArgs &&args = {});
 
     /**
      * @brief Compile the computation for streaming mode.
@@ -456,7 +458,11 @@ public:
      *
      * @sa @ref gapi_compile_args
      */
-    GStreamingCompiled compileStreaming(GCompileArgs &&args = {});
+    GAPI_WRAP GStreamingCompiled compileStreaming(GCompileArgs &&args = {});
+
+    /// @private -- Exclude this function from OpenCV documentation
+    GAPI_WRAP GStreamingCompiled compileStreaming(const cv::detail::ExtractMetaCallback &callback,
+                                                        GCompileArgs                   &&args = {});
 
     // 2. Direct metadata version
     /**
@@ -506,9 +512,9 @@ public:
     /// @private
     const Priv& priv() const;
     /// @private
-    explicit GComputation(cv::gimpl::s11n::I::IStream &);
+    explicit GComputation(cv::gapi::s11n::IIStream &);
     /// @private
-    void serialize(cv::gimpl::s11n::I::OStream &) const;
+    void serialize(cv::gapi::s11n::IOStream &) const;
 
 protected:
 
@@ -528,6 +534,7 @@ protected:
         GCompileArgs comp_args = std::get<sizeof...(Ts)-1>(meta_and_compile_args);
         return compileStreaming(std::move(meta_args), std::move(comp_args));
     }
+    void recompile(GMetaArgs&& in_metas, GCompileArgs &&args);
     /// @private
     std::shared_ptr<Priv> m_priv;
 };

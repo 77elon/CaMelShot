@@ -17,6 +17,7 @@ import org.opencv.android.CameraBridgeViewBase;
 import org.opencv.android.LoaderCallbackInterface;
 import org.opencv.android.OpenCVLoader;
 import org.opencv.android.Utils;
+import org.opencv.core.CvException;
 import org.opencv.core.Mat;
 import org.opencv.core.Point;
 import org.opencv.core.Scalar;
@@ -142,11 +143,12 @@ public class CamActivity extends MainActivity implements CameraBridgeViewBase.Cv
         Mat matInput = inputFrame.rgba();
         //MYJOB - detecting with yolo
         //Mat imageBlob = Dnn.blobFromImage(matInput, 0, new Size(640, 640), new Scalar(0, 0, 0),false,false);
-            Bitmap bitmap = Bitmap.createBitmap(matInput.cols(), matInput.rows(), null);
-            Utils.matToBitmap(matInput, bitmap);
-            YoloV5Ncnn.Obj[] objects = yolov5ncnn.Detect(bitmap, true);
-            showObjects(matInput, objects);
-            //return imageBlob;
+        Bitmap bitmap =  Bitmap.createBitmap(matInput.cols(), matInput.rows(), Bitmap.Config.ARGB_8888);
+        Utils.matToBitmap(matInput, bitmap);
+        YoloV5Ncnn.Obj[] objects = yolov5ncnn.Detect(bitmap, true);
+        //OpenCV.DetectMat(matInput.getNativeObjAddr(), true);
+        showObjects(matInput, objects);
+        //return imageBlob;
         //YoloV5Ncnn.Obj[] objects = yolov5ncnn.DetectMat(matInput, true);
         //showObjects(matInput, objects);
 

@@ -14,29 +14,32 @@
 
 package com.tencent.yolov5ncnn;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.media.ExifInterface;
-import android.graphics.Matrix;
 import android.net.Uri;
 import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
 import java.io.FileNotFoundException;
-import java.io.InputStream;
 import java.io.IOException;
 
-public class MainActivity extends Activity
+public class MainActivity extends AppCompatActivity
 {
+    static {
+        System.loadLibrary("opencv_java4");
+        System.loadLibrary("yolov5ncnn");
+    }
     private static final int SELECT_IMAGE = 1;
 
     private ImageView imageView;

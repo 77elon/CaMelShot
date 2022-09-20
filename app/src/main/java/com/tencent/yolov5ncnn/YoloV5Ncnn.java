@@ -17,12 +17,8 @@ package com.tencent.yolov5ncnn;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 
-import org.opencv.core.Mat;
-
 public class YoloV5Ncnn
 {
-    public native boolean Init(AssetManager mgr);
-
     public class Obj
     {
         public float x;
@@ -33,10 +29,7 @@ public class YoloV5Ncnn
         public float prob;
     }
 
-    public native Obj[] Detect(Bitmap bitmap, boolean use_gpu);
-    //public native Obj[] DetectMat(Mat mat, boolean use_gpu);
-    static {
-        System.loadLibrary("yolov5ncnn");
-    }
+    public static native Obj[] Detect(Bitmap bitmap, boolean use_gpu);
+    public native boolean Init(AssetManager mgr);
 
 }

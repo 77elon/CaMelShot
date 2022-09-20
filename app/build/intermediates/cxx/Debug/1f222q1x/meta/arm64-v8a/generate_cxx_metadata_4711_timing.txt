@@ -1,0 +1,31 @@
+# C/C++ build system timings
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+generate_cxx_metadata
+  execute-generate-process 4896ms
+generate_cxx_metadata completed in 4905ms
+
+# C/C++ build system timings
+generate_cxx_metadata
+  execute-generate-process 4962ms
+generate_cxx_metadata completed in 4973ms
+
+# C/C++ build system timings
+generate_cxx_metadata
+  execute-generate-process 4983ms
+generate_cxx_metadata completed in 4993ms
+
+# C/C++ build system timings
+generate_cxx_metadata
+  execute-generate-process 5156ms
+generate_cxx_metadata completed in 5165ms
+
+# C/C++ build system timings
+generate_cxx_metadata
+  execute-generate-process 5125ms
+generate_cxx_metadata completed in 5138ms
+
