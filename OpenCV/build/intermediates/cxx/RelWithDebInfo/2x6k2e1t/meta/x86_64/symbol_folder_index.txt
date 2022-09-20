@@ -1,0 +1,1 @@
+D:\AndroidStudioProjects\opencv_Test\OpenCV\build\intermediates\cxx\RelWithDebInfo\2x6k2e1t\obj\x86_64
