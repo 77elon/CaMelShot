@@ -6,9 +6,12 @@
   ![슬라이드9](https://user-images.githubusercontent.com/88618717/192153624-8c46ab3f-45a7-4af8-a7c0-99b3b590bf3b.PNG)
 
   * * * 
+  ## 외곽선 검출 과정
 
+  ![슬라이드 27](https://user-images.githubusercontent.com/88618717/192153779-b08fc582-d3d6-4d2e-b0e5-da5941c56d7f.png)
+  
   ## 구현 환경
-  OpenCV(CMake) -- 객체, 외곽선 검출 및 각도 계산
+  OpenCV(CMake) -- 객체, 외곽선 검출 및 각도 계산  
   Yolov5 (NDK) -- NCNN 기반 딥러닝 모델을 제작하였으며, 모바일 환경에서도 빠르게 건물을 감지 할 수 있습니다.
 
   ## 구현 기능
@@ -26,6 +29,4 @@
 
   우리 CaMelShot은 사용자 친화적인 외곽선 검출을 위해, NCNN에서 추출된 건물의 넓이와 사진에서의 비율을 계산하여 가장 적합한 외곽선을 보여줍니다. 
 
-  > 외곽선 검출 과정
 
-  ![슬라이드 27](https://user-images.githubusercontent.com/88618717/192153779-b08fc582-d3d6-4d2e-b0e5-da5941c56d7f.png)
