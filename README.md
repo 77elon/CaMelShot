@@ -9,7 +9,7 @@
 
   ## 구현 환경
   OpenCV(CMake) -- 객체, 외곽선 검출 및 각도 계산
-  Yolov5 (NDK) -- NCNN 기반 딥러닝 모델을 제작하였으며, 모바일 환경에서도 빠르게 건물을 감지 할 수 있다.
+  Yolov5 (NDK) -- NCNN 기반 딥러닝 모델을 제작하였으며, 모바일 환경에서도 빠르게 건물을 감지 할 수 있습니다.
 
   ## 구현 기능
 
@@ -18,7 +18,7 @@
   ![슬라이드10](https://user-images.githubusercontent.com/88618717/192153669-2b8b299a-adae-49d4-a6c7-75863188464c.PNG)
   ![슬라이드11](https://user-images.githubusercontent.com/88618717/192153689-c88c0027-68db-4e9f-9c3f-b0b4bca24abf.PNG)
   
-  NCNN 모델로부터 객체의 위치를 추출하고, 객체의 외곽선 부분만을 OpenCV에서 처리한다.
+  NCNN 모델로부터 객체의 위치를 추출하고, 객체의 외곽선 부분만을 OpenCV에서 처리합니다.
   
   * [개선된 외곽선 검출 기능]
 
