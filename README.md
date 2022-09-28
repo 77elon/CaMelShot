@@ -1,4 +1,6 @@
 # CaMelShot
+<img src="https://user-images.githubusercontent.com/86253257/192739421-855837fb-0885-4855-ae27-697355f5b895.PNG" width="120" height="100">
+
 > 2022-1 캡스톤, OpenCV
   
   촬영하고자 하는 사진의 각도를 계산하고, 사전에 촬영된 사진를 기반으로 구도를 보정해주는 안드로이드 애플리케이션입니다.
